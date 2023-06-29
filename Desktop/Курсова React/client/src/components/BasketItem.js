@@ -10,7 +10,7 @@ const BasketItem = observer(({ device, onRemove }) => {
     };
 
     return (
-        <Container className="mb-3 p-3" style={{ borderRadius: '10px', backgroundColor: '#f8f9fa', boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)' }}>
+        <Container className="mb-3 p-3" style={{ borderRadius: '10px', backgroundColor: '#ffffff', boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)' }}>
             <Row className="align-items-center">
                 <Col xs={3}>
                     <Image

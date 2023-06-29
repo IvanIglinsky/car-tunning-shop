@@ -12,7 +12,7 @@ import {Context} from "../index";
 import {fetchBrands, fetchDevices, fetchTypes} from "../http/deviceAPI";
 import Pages from "../components/Pages";
 import "./style/styleForPages.css"
-import Spinner from "../components/Spinner";
+
 
 
 const Shop = observer(() => {
@@ -39,12 +39,11 @@ const Shop = observer(() => {
     return (
 
         <Container className={"mainShopPage"}>
-            < Spinner/>
             <Row className="mt-2">
                 <Col md={3}>
-                    <Filtres/>
-                    <TypeBar/>
 
+                    <TypeBar/>
+                    <Filtres/>
 
                 </Col>
 

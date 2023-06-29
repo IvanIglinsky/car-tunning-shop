@@ -55,30 +55,24 @@ const DevicePage = () => {
                     <Image className="ImgItem" width={300} height={350} src={process.env.REACT_APP_API_URL + device.img} />
                 </Col>
                 <Col md={4}>
-                    <Row className="d-flex flex-column align-items-center">
+                    <Row className="d-flex flex-column align-items-center ">
                         <h2 className="text-white">{device.name}</h2>
-                        <div
-                            className="d-flex align-items-center justify-content-center "
-                            style={{ background: `url(${star}) no-repeat center center`, width: 300, height: 300, backgroundSize: 'cover', fontSize: 64 }}
-                        >
-                            <input type="number" min="0" max="10" style={{ fontSize: 30, width: 55, marginLeft: 15, fontWeight: "bold", overflow: "hidden", background: "transparent", border: "none", justifyContent: "center" }} value={rating} onChange={handleRatingChange} />
-                        </div>
                     </Row>
                 </Col>
                 <Col md={4}>
                     <Card
                         className="d-flex flex-column align-items-center justify-content-around"
-                        style={{ width: 300, height: 300, fontSize: 32, border: '5px solid lightgray' }}
+                        style={{ width: 300, height: 300, fontSize: 32, border: '5px solid #48036F',borderRadius:'15px',background:"#7109AA" }}
                     >
                         <h3>Від: {device.price && device.price.toLocaleString()} ₴</h3>
-                        <Button variant={"outline-dark"} onClick={addToBasketHandler}>Додати в кошик</Button>
+                        <Button variant={"outline-dark"} style={{  boxShadow:"0 0 10px rgb(0, 0, 0)"}} onClick={addToBasketHandler}>Додати в кошик</Button>
                     </Card>
                 </Col>
             </Row>
             <Row className="d-flex flex-column m-3">
                 <h1 className="text-white">Характеристики</h1>
                 {device.info.map((info, index) =>
-                    <Row key={info.id} style={{ background: index % 2 === 0 ? 'lightgray' : 'white', padding: 10 }}>
+                    <Row key={info.id} style={{ background: index % 2 === 0 ? '#48036F' : '#7109AA', padding: 10,color:"white" }}>
                         {info.title}: {info.description}
                     </Row>
                 )}

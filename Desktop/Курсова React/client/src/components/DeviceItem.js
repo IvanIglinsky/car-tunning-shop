@@ -9,23 +9,26 @@ import {DEVICE_ROUTE} from "../utils/consts";
 const DeviceItem = ({device}) => {
     const history = useNavigate ()
     let price=device.price.toLocaleString()
-    let txt="Годиник"
+    let txt="Товар"
     if(device.typeId==1){
         txt="Телефон";
     }
     else if(device.typeId==2){
-        txt="Ноутбук";
+        txt="Моноблок";
     }
     else if(device.typeId==3){
-        txt="Комп'ютер";
+        txt="Ноутбук";
     }
     else if(device.typeId==4){
-        txt="Гаджети та аксесуари";
+        txt="Годиник";
+    }
+    else if(device.typeId==5){
+        txt="Навушники";
     }
     return (
         <Col md={3} className={"mt-3 OneItem  d-flex justify-content-center bg-white mr-5"}  onClick={() => history(DEVICE_ROUTE + '/' + device.id)}>
             <Card style={{width: 150,height:350, cursor: 'pointer'}} border={"light"}>
-                <Image className={"mt-3"} width={150} height={200} src={process.env.REACT_APP_API_URL + device.img}/>
+                <Image className={"mt-3"} width={150} height={200}  src={process.env.REACT_APP_API_URL + device.img}/>
                 <div className="text-black-50 mt-1 d-flex justify-content-between align-items-center">
                     <div>{ txt}</div>
                     <div className="d-flex align-items-center">
@@ -34,7 +37,7 @@ const DeviceItem = ({device}) => {
                     </div>
                 </div>
                 <div >{device.name}</div>
-                <div style={{ textAlign: "center", marginTop: "auto", marginBottom: "10px", fontWeight: "bold",border:"1px solid black",borderRadius:"10px" }}>{price} ₴</div>
+                <div style={{ textAlign: "center", marginTop: "auto", marginBottom: "10px", fontWeight: "bold"}}>{price} ₴</div>
             </Card>
         </Col>
     );

@@ -16,6 +16,9 @@ const TypeBar = observer(() => {
     };
 
     return (
+        <div>
+            <h3 className="ml-2">Типи
+            </h3>
         <ListGroup>
             {device.types.map((type) => (
                 <ListGroup.Item
@@ -28,6 +31,7 @@ const TypeBar = observer(() => {
                 </ListGroup.Item>
             ))}
         </ListGroup>
+        </div>
     );
 });
 
